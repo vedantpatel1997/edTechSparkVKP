@@ -10,6 +10,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   styles: [
   ]
 })
+
 export class CourseComponent implements OnInit {
   courses: Course[] | any;
   constructor(private courseService: CourseService) { }
@@ -30,3 +31,4 @@ export class CourseComponent implements OnInit {
     })
   }
 }
+console.log(`Hello`);
