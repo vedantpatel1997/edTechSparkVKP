@@ -1,29 +1,39 @@
 <div class="container">
-    <div class="row pt-4 pb-4">
-        <h2 class="top_SP">
-            <span>Our Courses</span>
-            <button class="btn btn-primary" [routerLink]="['/create']">Create Your Own Course</button>
-        </h2>
-    </div>
-    <hr>
-    
-    <div class="row pt-4 pb-4">
-        <div class="col-sm-4 pb-4" *ngFor="let item of courses">
-            <div class="card border-info">
-                <img class="card-img-top" [routerLink]="['/displayCourse',item.id]" [src]="item.imageUrl"
-                    alt="Card image cap">
-                <div class="card-body">
-                    <h4 class="card-title">{{item.name}}</h4>
-                    <p class="card-text">{{item.summary}}</p>
-                    <p style="
+  <div class="row pt-4 pb-4">
+    <h2 class="top_SP">
+      <span>Our Courses</span>
+      <button class="btn btn-primary" [routerLink]="['/create']">Create Your Own Course</button>
+    </h2>
+  </div>
+  <hr>
+
+  <div class="row pt-4 pb-4">
+    <div class="col-sm-4 pb-4" *ngFor="let item of courses">
+      <div class="card border-info">
+        <img class="card-img-top" [routerLink]="['/displayCourse',item.id]" [src]="item.imageUrl" alt="Card image cap">
+        <div class="card-body">
+          <h4 class="card-title">{{item.name}}</h4>
+          <p class="card-text">{{item.summary}}</p>
+          <!-- <p style="
                     justify-content: space-between;
                     display: flex;">
                         <button class="btn btn-danger btn_SP" (click)="DeleteCourse(item.id)">Delete</button>
                         <button class="btn btn-secondary btn_SP" [routerLink]="['/create',item.id]">Edit</button>
-                    </p>
-                </div>
+                    </p> -->
+          <div class="row">
+            <div class="col">
+              <div class="d-grid gap-2 col-12 mx-auto">
+                <button class="btn btn-danger btn_SP" (click)="DeleteCourse(item.id)">Delete</button>
+              </div>
             </div>
+            <div class="col">
+              <div class="d-grid gap-2 col-12 mx-auto">
+                <button class="btn btn-secondary btn_SP" [routerLink]="['/create',item.id]">Edit</button>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
     <!-- <div class="card mb-3" style="max-width: 540px;">
         <div class="row g-0">
@@ -39,4 +49,4 @@
           </div>
         </div>
       </div> -->
-</div>
+  </div>
