@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+.btn_SP{
+    padding: 0.375rem 4rem !important;
+}
+
+.top_SP{
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+}
+
+.Home_SP{
+    display: flex !important;
+    justify-content: end !important;
+}

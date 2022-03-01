@@ -1,0 +1,140 @@
+<h2 class="top_SP pt-4 pb-4" *ngIf="id == undefined">
+    <span>Add New Course</span>
+    <button class="btn btn-primary"[routerLink]="['']">Home</button>
+</h2>
+<h2 class="pt-4 pb-4 top_SP" *ngIf="id !== undefined">
+    <span>Update Course</span>
+    <button class="btn btn-primary"[routerLink]="['']">Home</button>
+</h2>
+
+<hr>
+<div class="col-sm-6 pt-4 pb-4">
+    <form [formGroup]="userForm" (ngSubmit)="SaveData()" #form="ngForm">
+
+        <div class="mb-3">
+            <label class="form-label">Course Name</label>
+            <input type="text" name="name" class="form-control" formControlName="name">
+            <div class="text-danger"
+                *ngIf="userForm.controls['name'].errors && (form.submitted || userForm.controls['name'].touched)">
+                <span [hidden]="!userForm.controls['name'].errors['required']"> Enter Course name </span>
+
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Category</label>
+            <select class="form-control" name="category" formControlName="categoryId">
+                <option [value]=null>-- Select Category --</option>
+                <option *ngFor="let item of categories" [value]="item.id">
+                    {{item.name}}
+                </option>
+            </select>
+            <div class="text-danger"
+                *ngIf="userForm.controls['categoryId'].errors && (form.submitted || userForm.controls['categoryId'].touched)">
+                <span [hidden]="!userForm.controls['categoryId'].errors['required']"> Please select Category </span>
+
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Mentor</label>
+            <select class="form-control" name="mentor" formControlName="mentorId">
+                <option [value]=null>-- Select Mentor --</option>
+                <option *ngFor="let item of mentors" [value]="item.id">
+                    {{item.name}}
+                </option>
+            </select>
+            <div class="text-danger"
+                *ngIf="userForm.controls['mentorId'].errors && (form.submitted || userForm.controls['mentorId'].touched)">
+                <span [hidden]="!userForm.controls['mentorId'].errors['required']"> Please select mentor </span>
+
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Summary</label>
+            <input type="text" name="summary" class="form-control" formControlName="summary">
+            <div class="text-danger"
+                *ngIf="userForm.controls['summary'].errors && (form.submitted || userForm.controls['summary'].touched)">
+                <span [hidden]="!userForm.controls['summary'].errors['required']"> Enter Summary </span>
+
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Description</label>
+            <input type="text" name="description" class="form-control" formControlName="description">
+            <div class="text-danger"
+                *ngIf="userForm.controls['description'].errors && (form.submitted || userForm.controls['description'].touched)">
+                <span [hidden]="!userForm.controls['description'].errors['required']"> Enter Description </span>
+
+            </div>
+        </div>
+        <div class="mb-3 col-sm-3">
+            <label class="form-label">Difficulty Type</label>
+            <!-- <input type="number" name="difficultyType" class="form-control" formControlName="difficultyType"> -->
+            <input type="range" class="form-range" min="0" max="5" id="customRange2" name="difficultyType" formControlName="difficultyType">
+            <!-- <div class="text-danger"
+                *ngIf="userForm.controls['difficultyType'].errors && (form.submitted || userForm.controls['difficultyType'].touched)">
+                <span [hidden]="!userForm.controls['difficultyType'].errors['required']"> Enter Difficulty Type (0-5)
+                </span>
+            </div> -->
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Unit Price</label>
+            <input type="number" name="unitPrice" class="form-control" formControlName="unitPrice">
+            <div class="text-danger"
+                *ngIf="userForm.controls['unitPrice'].errors && (form.submitted || userForm.controls['unitPrice'].touched)">
+                <span [hidden]="!userForm.controls['unitPrice'].errors['required']"> Enter Unit Price </span>
+
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Image URL</label>
+            <input type="text" name="imageUrl" class="form-control" formControlName="imageUrl">
+            <div class="text-danger"
+                *ngIf="userForm.controls['imageUrl'].errors && (form.submitted || userForm.controls['imageUrl'].touched)">
+                <span [hidden]="!userForm.controls['imageUrl'].errors['required']"> Enter Image URL </span>
+
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Demo URL</label>
+            <input type="text" name="demoUrl" class="form-control" formControlName="demoUrl">
+            <div class="text-danger"
+                *ngIf="userForm.controls['demoUrl'].errors && (form.submitted || userForm.controls['demoUrl'].touched)">
+                <span [hidden]="!userForm.controls['demoUrl'].errors['required']"> Enter Demo URL </span>
+
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">URL</label>
+            <input type="text" name="url" class="form-control" formControlName="url">
+            <div class="text-danger"
+                *ngIf="userForm.controls['url'].errors && (form.submitted || userForm.controls['url'].touched)">
+                <span [hidden]="!userForm.controls['url'].errors['required']"> Enter URL </span>
+
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <input type="submit" value="Add Course" *ngIf="id == undefined" class="btn btn-primary">
+            <input type="submit" value="Update Course" *ngIf="id !== undefined" class="btn btn-primary">
+        </div>
+    </form>
+</div>
+
+<!-- <button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button>
+
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+  <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <img src="..." class="rounded me-2" alt="...">
+      <strong class="me-auto">Bootstrap</strong>
+      <small>11 mins ago</small>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      Hello, world! This is a toast message.
+    </div>
+  </div>
+</div> -->

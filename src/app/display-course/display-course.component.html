@@ -1,0 +1,63 @@
+<!-- <div style="border-bottom: 1px solid #e0dada; background: #e7eaed">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="pt-5 pb-4">
+                    <h1>{{course.name}}</h1>
+                    <p class="pb-4">{{course.summary}}</p>
+                    <p><a lass="btn btn-primary">START LEARNING NOW</a></p>
+                </div>
+            </div>
+            <div class="col-sm-4 pt-5 pb-2">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" [src]="course.demoUrl" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container pt-4">
+    <div class="row">
+        <div class="col-sm-8">
+            <h3>Description</h3>
+            <div [innerHTML]="course.description"></div>
+            <br />
+        </div>
+        <div class="col-sm-4">
+            <div class="text-center card p-4">
+                <h2>{{course.unitPrice | currency:'INR'}}</h2>
+                <p class="mt-2">
+                    <a href="javascript:void(0)"
+                        (click)="AddToCart(course.id ,course.name,course.unitPrice,course.imageUrl)"
+                        class="btn btn-outline-primary btn-block">Add To Cart</a>
+                </p>
+                <p>
+                    <a href="javascript:void(0)"
+                        (click)="BuyNow(course.id,course.name,course.unitPrice,course.imageUrl)"
+                        class="btn btn-info btn-block">BUY NOW</a>
+                </p>
+            </div>
+            <!-- <div class="card mt-4 p-3 mb-4">
+                <h3>About The Mentor</h3>
+                <p style="text-align:justify;font-size:14px;text-rendering:optimizeLegibility"></p>
+                <p style="text-align:justify">{{course.mentor.biography}}<br></p>
+                <div class="text-center">
+                    <img class="rounded-circle" style="width:150px;height:150px;text-align:center"
+                        [src]="course.mentor.imageUrl">
+                    <h4>{{course.mentor.name}}</h4>
+                    <div>{{course.mentor.title}}</div>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div> 
+
+-->
+<h2 class="pt-4 pb-4 Home_SP">
+    <button class="btn btn-primary"[routerLink]="['']">Home</button>
+</h2>
+<hr>
+<h2 class="container pt-4 pb-4">Work In Progress...</h2>
