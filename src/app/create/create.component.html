@@ -70,9 +70,9 @@
             </div>
         </div>
         <div class="mb-3 col-sm-3">
-            <label class="form-label">Difficulty Type</label>
+            <label class="form-label">Difficulty (1 - 5)</label>
             <!-- <input type="number" name="difficultyType" class="form-control" formControlName="difficultyType"> -->
-            <input type="range" class="form-range" min="0" max="5" id="customRange2" name="difficultyType" formControlName="difficultyType">
+            <input type="range" class="form-range" min="1" max="5" name="difficultyType" formControlName="difficultyType">
             <!-- <div class="text-danger"
                 *ngIf="userForm.controls['difficultyType'].errors && (form.submitted || userForm.controls['difficultyType'].touched)">
                 <span [hidden]="!userForm.controls['difficultyType'].errors['required']"> Enter Difficulty Type (0-5)
