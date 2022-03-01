@@ -1,3 +1,7 @@
+# edTechSpark Web Application
+
+Learnig website like UDEMY developed using angular.
+
 # Assignment
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.0.
