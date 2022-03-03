@@ -84,7 +84,7 @@ export class CreateComponent implements OnInit {
 
       this.course = this.userForm.value;
       this.course.id = this.id;
-
+      console.log(this.course)
       this.courseService.UpdateCourse(this.course).subscribe(res => {
         if (res.status == 200) {
           alert(`Course is updated.`)

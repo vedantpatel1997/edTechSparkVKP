@@ -25,10 +25,13 @@ export class CourseComponent implements OnInit {
 
   DeleteCourse(id: number) {
     this.courseService.DeleteCourse(id).subscribe(res => {
-      this.courseService.GetCourses().subscribe(res => {
-        this.courses = res
-      })
+      if (res.status == 200) {        
+        this.courseService.GetCourses().subscribe(res => {
+          this.courses = res
+        })
+      }
     })
   }
 }
-console.log(`Hello`);
+
+console.log(`Hello Vedant Patel`)
